@@ -46,6 +46,9 @@
                             <barButtonItem systemItem="organize" id="EPb-nl-LOZ"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="pim-uk-3mc" id="9am-N9-UaS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
