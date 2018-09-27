@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jTi-xJ-L64">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defualteggs" translatesAutoresizingMaskIntoConstraints="NO" id="jTi-xJ-L64">
                                 <rect key="frame" x="0.0" y="64" width="375" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="gyc-ux-QKF"/>
@@ -47,6 +47,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="imageView" destination="jTi-xJ-L64" id="mww-Zs-DqE"/>
                         <outlet property="tableView" destination="pim-uk-3mc" id="9am-N9-UaS"/>
                     </connections>
                 </viewController>
@@ -73,4 +74,7 @@
             <point key="canvasLocation" x="6" y="133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defualteggs" width="4256" height="2848"/>
+    </resources>
 </document>
