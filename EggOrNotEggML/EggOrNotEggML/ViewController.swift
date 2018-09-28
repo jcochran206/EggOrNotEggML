@@ -14,6 +14,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var camerBtn: UIBarButtonItem!
+    
     
     var restnetModel = Resnet50()
     var results = [VNClassificationObservation]()
@@ -26,6 +28,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if let image = imageView.image { detectImage(image: image)}
         imagePicker.delegate = self
+        
+        camerBtn.isEnabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera)
+        
     }
     
     //functions section

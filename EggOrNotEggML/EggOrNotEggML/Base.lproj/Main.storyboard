@@ -55,6 +55,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="camerBtn" destination="aFe-Md-Q2w" id="JRQ-Tm-XK8"/>
                         <outlet property="imageView" destination="jTi-xJ-L64" id="mww-Zs-DqE"/>
                         <outlet property="tableView" destination="pim-uk-3mc" id="9am-N9-UaS"/>
                     </connections>
