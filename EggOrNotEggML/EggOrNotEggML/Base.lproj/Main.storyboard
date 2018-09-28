@@ -42,8 +42,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="Detect Eggs" id="fdb-cl-15w">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="camera" id="aFe-Md-Q2w"/>
-                            <barButtonItem systemItem="organize" id="EPb-nl-LOZ"/>
+                            <barButtonItem systemItem="camera" id="aFe-Md-Q2w">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="BYZ-38-t0r" id="3Od-rD-wgw"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="EPb-nl-LOZ">
+                                <connections>
+                                    <action selector="folderTapped:" destination="BYZ-38-t0r" id="4FH-em-xNe"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>

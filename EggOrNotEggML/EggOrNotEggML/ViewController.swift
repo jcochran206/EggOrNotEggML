@@ -10,14 +10,14 @@ import UIKit
 import CoreML
 import Vision
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
     
     var restnetModel = Resnet50()
     var results = [VNClassificationObservation]()
-    
+    var imagePicker = UIImagePickerController()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,9 +25,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         
         if let image = imageView.image { detectImage(image: image)}
+        imagePicker.delegate = self
     }
     
     //functions section
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            imageView.image = image
+            detectImage(image: image)
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
     //Mark process thru image in resnet model thru a request
     func detectImage(image:UIImage) {
         if let model = try? VNCoreMLModel(for: restnetModel.model){
@@ -58,10 +66,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = UITableViewCell()
         let result = results[indexPath.row]
         let name = result.identifier.prefix(20)
-        cell.textLabel?.text = "\(name): \(result.confidence * 50)%"
+        cell.textLabel?.text = "\(name): \(Int(result.confidence * 100))%"
         return cell
     }
 
-
+    @IBAction func folderTapped(_ sender: Any) {
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func cameraTapped(_ sender: Any) {
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
+    }
 }
 
