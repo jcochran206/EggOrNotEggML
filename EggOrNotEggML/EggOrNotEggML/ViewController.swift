@@ -16,7 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var imageView: UIImageView!
     
     var restnetModel = Resnet50()
-    
+    var results = [VNClassificationObservation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let model = try? VNCoreMLModel(for: restnetModel.model){
             let request = VNCoreMLRequest(model: model) { (request, error) in
                 if let results = request.results as? [VNClassificationObservation] {
-                    print(results)
+                    self.results = Array(results.prefix(20))
+                    self.tableView.reloadData()
+                    
+//                    for egg in results {
+//                        print("\(egg.identifier): \(egg.confidence * 50)%")
+//                    }
                 }
             }
             //converts image into data and uses handler
@@ -46,12 +51,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return results.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "hi"
+        let result = results[indexPath.row]
+        let name = result.identifier.prefix(20)
+        cell.textLabel?.text = "\(name): \(result.confidence * 50)%"
         return cell
     }
 
