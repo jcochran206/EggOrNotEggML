@@ -17,8 +17,12 @@ app that detects if image is an egg or not an egg my take on hot dog or not hot 
 ## Legal
 This application is utilizing the MIT License for open source
 
-##Credits for images used
+## Credits for images used
 Photo by KS KYUNG on Unsplash
+
+## CoreML library used for this application
+ - model name is ResNet50
+ - https://github.com/fchollet/deep-learning-models
 
 ## Copyright (c) 2018 Copyright Jonathan Cochran All Rights Reserved.
 
