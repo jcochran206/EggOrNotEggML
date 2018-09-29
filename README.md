@@ -2,6 +2,16 @@
 ## Description
 app that detects if image is an egg or not an egg my take on hot dog or not hot dog machine learning app
 ## Features
+- single screen application that allows user to choose an image or take a photo in order to have CoreML predict what is the dominate feature in the image.  
+- provides percentage of probability of item
+- provides the top 20 guess from CoreML array
+- detects if phone camera is available
+## Technologies used
+- UIKit
+- Swift 4.2
+- Xcode 10
+- CoreML
+- Vision
 
 ## Requirements
 - [ ] Xcode 9
@@ -9,7 +19,8 @@ app that detects if image is an egg or not an egg my take on hot dog or not hot 
 - [ ] Swift 4
 
 ## How to Build
-
+- git clone https://github.com/jcochran206/EggOrNotEggML.git
+- open EggOrNotEggML.xcodeproj
 
 ## Author
 **Jonathan Cochran**
@@ -27,6 +38,6 @@ Photo by KS KYUNG on Unsplash
 ## Copyright (c) 2018 Copyright Jonathan Cochran All Rights Reserved.
 
 ## Screenshots
-![eggs](https://user-images.githubusercontent.com/16602585/46192227-2fb11580-c2af-11e8-859a-9bcefcb7d761.png)
-![tiger](https://user-images.githubusercontent.com/16602585/46192243-3770ba00-c2af-11e8-8c39-065a2989090f.png)
-![lion](https://user-images.githubusercontent.com/16602585/46192246-3a6baa80-c2af-11e8-93b6-d05ab554200a.png)
+![eggs](https://user-images.githubusercontent.com/16602585/46192227-2fb11580-c2af-11e8-859a-9bcefcb7d761.png =250x250)
+![tiger](https://user-images.githubusercontent.com/16602585/46192243-3770ba00-c2af-11e8-8c39-065a2989090f.png =250x250)
+![lion](https://user-images.githubusercontent.com/16602585/46192246-3a6baa80-c2af-11e8-93b6-d05ab554200a.png =250x250)
